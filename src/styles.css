@@ -38,7 +38,6 @@ body {
   min-height: 100vh;
   box-sizing: border-box;
   background-color: #242424;
-  padding: 1%;
 }
 
 button {
@@ -73,19 +72,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-/* 
-.BbQuotesSection {
-  width: 50vw;
+
+.spanNav {
+  white-space: nowrap;
+  padding: 0% 1%;
 }
-
-.bBBq {
-  display: flex;
-} */
-
-/* .bgTodo {
-  background-color: #302f2f;
-}
-
-a {
-  margin-right: 5px;
-} */
