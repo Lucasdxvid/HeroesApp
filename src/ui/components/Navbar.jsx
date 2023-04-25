@@ -1,5 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 export const Navbar = () => {
+  //! Custom hook propio de reactRouter - (custom porque no es de react) para ayudarnos con la navegacion
+  //Navigation.provider (posee funciones como volver atras, crear nueva pantalla en historial, etc.)
+  const navigate = useNavigate();
+
+  const onLogout = () => {
+    navigate("/login", { replace: true }); //Replace evita volver a la pagina anterior (no guarda historial)
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light rounded-3">
@@ -53,16 +61,12 @@ export const Navbar = () => {
                   DC
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/login"
-                >
-                  Logout
-                </NavLink>
-              </li>
+              <button
+                className="nav-item nav-link btn btn-secondary text-danger btnLogout"
+                onClick={onLogout}
+              >
+                Logout
+              </button>
             </ul>
           </div>
         </div>

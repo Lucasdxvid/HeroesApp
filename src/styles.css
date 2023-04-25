@@ -77,3 +77,11 @@ button:focus-visible {
   white-space: nowrap;
   padding: 0% 1%;
 }
+
+.btnLogout {
+  background-color: rgb(160, 178, 231);
+}
+
+.pB {
+  color: rgb(26, 25, 25);
+}
