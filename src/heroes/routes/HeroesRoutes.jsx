@@ -15,7 +15,8 @@ export const HeroesRoutes = () => {
 
           {/* Pages Functions */}
           <Route path="search" element={<SearchPage />} />
-          <Route path="hero" element={<HeroPage />} />
+          {/*! :id hace referencia a la ruta de la card especifica del heroe */}
+          <Route path="hero/:heroId" element={<HeroPage />} />
 
           {/* Default Route */}
           <Route path="/*" element={<Navigate to="marvel" />} />

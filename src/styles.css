@@ -84,4 +84,5 @@ button:focus-visible {
 
 .pB {
   color: rgb(26, 25, 25);
+  white-space: nowrap;
 }
