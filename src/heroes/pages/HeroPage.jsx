@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { getHeroById } from "../helpers/getHeroById";
 
@@ -5,7 +6,8 @@ export const HeroPage = () => {
   //! Custom hook de ReactRouterDom - Sirve para obtener los parametros / lo desestrucutramos porque sabemos que dentro posee el id de la card
   const { heroId } = useParams();
 
-  const hero = getHeroById(heroId);
+  //! Hook useMemo para memorizar las cards usando la id de dependencia (solo cuando la id cambia se dispara la funcion callback que nos trae los heroes) - El valor se mantiene igual porque es la misma id si algo del padre cambiaria
+  const hero = useMemo(() => getHeroById(heroId), [heroId]);
 
   //! Boton para retroceder - customHook ReactRouterDom
   const navigate = useNavigate();
