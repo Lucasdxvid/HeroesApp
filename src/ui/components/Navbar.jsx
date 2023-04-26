@@ -60,6 +60,14 @@ export const Navbar = () => {
                 >
                   DC
                 </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/search"
+                >
+                  Buscar
+                </NavLink>
               </li>
               <button
                 className="nav-item nav-link btn btn-secondary text-danger btnLogout"
