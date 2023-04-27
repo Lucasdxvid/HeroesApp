@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import { useForm } from "../../hooks/useForm";
 import { HeroCard } from "../components";
+import { getHeroesByName } from "../helpers";
 
 export const SearchPage = () => {
   //! Custom Hook para cambiar la queryParam (ReactRouterDom) / useLocation para
@@ -10,9 +11,12 @@ export const SearchPage = () => {
 
   const { q = "" } = queryString.parse(location.search);
 
+  //! Helper para filtrar heroe acorde al "name"
+  const heroes = getHeroesByName(q); // La Q es la query de arriba
+
   //! Mantener el valor - useForm (nuestro customHook)
   const { searchText, onInputChange } = useForm({
-    searchText: "",
+    searchText: q, // esto esta "" para que al recargar la pag se quede vacio pero si pones el mismo valor de q, entonces al recargar la pagina tendra el valor del query
   });
 
   //! Prevent Default + formateo del texto en search
@@ -56,7 +60,9 @@ export const SearchPage = () => {
             No se encontró a <b className="pB">{q}</b>
           </div>
 
-          {/* <HeroCard {..hero} /> */}
+          {heroes.map((hero) => (
+            <HeroCard key={hero.id} {...hero} /> // desestructuramos el resto de elementos
+          ))}
         </div>
       </div>
     </>
