@@ -1,8 +1,8 @@
-# 👁 HeroesApp 👁
+# 🦸‍♂️ HeroesApp 🦸‍♀️
 
 ¡Bienvenido! Este es el repositorio de mi App "HeroesApp".
 
-🕸 Esta aplicación nos permite buscar y mostrar diferentes héroes de franquicias como Marvel y DC 🕸
+🔥 Esta aplicación nos permite buscar y mostrar diferentes héroes de franquicias como Marvel y DC 🔥
 
 La misma posee un login, search, rutas y pantallas de héroes acorde a su franquicia...
 
