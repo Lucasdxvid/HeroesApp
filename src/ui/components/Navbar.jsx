@@ -31,35 +31,37 @@ export const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/"
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
                 >
                   Asociaciones
-                </NavLink>
+                </a>
+                <ul className="dropdown-menu">
+                  <NavLink
+                    className={({ isActive }) =>
+                      `nav-link  ${isActive ? "active" : ""}`
+                    }
+                    to="/marvel"
+                  >
+                    Marvel
+                  </NavLink>
+                  <NavLink
+                    className={({ isActive }) =>
+                      `nav-link  ${isActive ? "active" : ""}`
+                    }
+                    to="/dc"
+                  >
+                    DC
+                  </NavLink>
+                </ul>
               </li>
+              <li className="nav-item"></li>
               <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/marvel"
-                >
-                  Marvel
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/dc"
-                >
-                  DC
-                </NavLink>
                 <NavLink
                   className={({ isActive }) =>
                     `nav-link ${isActive ? "active" : ""}`
