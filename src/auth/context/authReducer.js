@@ -15,7 +15,6 @@ export const authReducer = (state = {}, action) => {
     case types.logout:
       return {
         logged: false, //* Aqui no colocamos el NAME porque no existe cuando no estamos logeados o podemos poner name: null
-        name: null,
       };
       break;
     default:
@@ -23,3 +22,5 @@ export const authReducer = (state = {}, action) => {
       break;
   }
 };
+
+// Los reducers estan destinados a ser funciones puras por lo que no podemos llamar recursos externos como localStorage, api, etc.

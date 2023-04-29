@@ -4,11 +4,11 @@ import { AuthContext } from "./AuthContext";
 import { authReducer } from "./authReducer"; //* Usamos el reducer que creamos como plantilla - parametro del useReducer
 import { types } from "../types/types";
 
-//! Estado inicial 
+//! Estado inicial
 //? Lo comentamos porque ahora el INIT se encarga de almacenar esas propiedades por lo que en vez de colocar initialState colocamos un objeto vacio {} en el useReducer
 // const initialState = {
 //   logged: false,
-// }; 
+// };
 
 //! Inicializador (3er argumento) - lo usamos para almacenar la info del user
 const init = () => {
@@ -26,6 +26,7 @@ export const AuthProvider = ({ children }) => {
   // Desestructuramos el state (cualquier nombre y el dispatch) y recibe el reducer, initialState
   const [authState, dispatch] = useReducer(authReducer, {}, init); //? Usaremos el 3er posible argumento el cual es el INIT (inicializador) para almacenar la info del login con localStorage
 
+  //! Login
   const login = (name = "") => {
     const user = { id: "Dual", name }; // definimos el usuario
 
@@ -39,9 +40,20 @@ export const AuthProvider = ({ children }) => {
     dispatch(action); // despachamos la accion que recibimos de arriba
   };
 
+  //! Logout
+  const logout = () => {
+    localStorage.removeItem("user"); // eliminamos el usuario del localStorage
+    const action = {
+      type: types.logout,
+    };
+    dispatch(action);
+  };
+
   //! Proveemos el login y ademas el estado del useReducer, is lo desestructuramos es mas facil de manejar visualmente (no tenemos el objeto, directamente las props asi)
   return (
-    <AuthContext.Provider value={{ ...authState, login: login }}>
+    <AuthContext.Provider
+      value={{ ...authState, login: login, logout: logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
