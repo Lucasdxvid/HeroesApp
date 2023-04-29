@@ -8,11 +8,11 @@ const initialState = {
   logged: false,
 };
 
-//! useReducer para controlar varios estados de la info que proveemos - usamos el reducer que creamos como plantilla
-// Desestructuramos el state (cualquier nombre y el dispatch) y recibe el reducer, initialState
-useReducer[(authState, dispatch)] = (authReducer, initialState);
-
 //Recibe hijos (componentes hijos) - high order component
 export const AuthProvider = ({ children }) => {
+  //! useReducer para controlar varios estados de la info que proveemos - usamos el reducer que creamos como plantilla
+  // Desestructuramos el state (cualquier nombre y el dispatch) y recibe el reducer, initialState
+  const [authState, dispatch] = useReducer(authReducer, initialState);
+
   return <AuthContext.Provider value={{}}>{children}</AuthContext.Provider>;
 };
