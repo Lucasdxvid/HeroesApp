@@ -1,5 +1,11 @@
+import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../auth";
+
 export const Navbar = () => {
+  //! Accedemos a nuestro GLOBAL CONTEXT y traemos la propiedad del user que posee el usuario / booleano
+  const { user } = useContext(AuthContext);
+
   //! Custom hook propio de reactRouter - (custom porque no es de react) para ayudarnos con la navegacion
   //Navigation.provider (posee funciones como volver atras, crear nueva pantalla en historial, etc.)
   const navigate = useNavigate();
@@ -16,7 +22,7 @@ export const Navbar = () => {
             HeroesApp
           </Link>
           <span className="nav-item nav-link text-primary spanNav">
-            Dual Athloner
+            {user?.name}
           </span>
           <button
             className="navbar-toggler"

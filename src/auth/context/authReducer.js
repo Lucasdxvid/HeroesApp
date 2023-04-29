@@ -9,7 +9,7 @@ export const authReducer = (state = {}, action) => {
       return {
         ...state, //* Es util desestructurar el estado porque si el dia de mañana tenemos mas propiedades ya las tenemos disponibles
         logged: true, //? En el caso de que logeemos el usuario sera true, (accion principal mientras que payload info adicional)
-        name: action.payload, //? El nombre sera igual al payload (información adicional que se envía junto con una acción a través del dispatch del reduce)
+        user: action.payload, //? El nombre sera igual al payload (información adicional que se envía junto con una acción a través del dispatch del reduce)
       };
       break;
     case types.logout:
