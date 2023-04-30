@@ -9,8 +9,10 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const onLogin = () => {
+    const lastPath = localStorage.getItem("lastPath") || "/"; // Condicional para que no guarde el last path en el login si es nulo
+
     login("Dual Athloner"); //* El login del contexto global nos pedia un nombre
-    navigate("marvel", { replace: true }); // la persona no puede volver al login, no guarda el historial al usar el back
+    navigate(lastPath, { replace: true }); // la persona no puede volver al login, no guarda el historial al usar el back / ya no es marvel ahora es lastPath
   };
   return (
     <div className="container mt-5">

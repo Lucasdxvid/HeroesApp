@@ -28,7 +28,6 @@ export const SearchPage = () => {
     e.preventDefault();
     //? if (searchText.trim().length <= 1) return; //quitamos espacios y si es menor a 1 no devolvemos nada
     navigate(`?q=${searchText}`); //Definimos la ruta acorde al valor de nuestro search
-    console.log({ searchText });
   };
 
   return (
