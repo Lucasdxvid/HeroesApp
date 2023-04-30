@@ -6,7 +6,7 @@
 
 -- // --
 
-La misma posee un login, search, rutas y pantallas de héroes acorde a su franquicia...
+La misma posee un login-logout, search, rutas públicas-privadas y pantallas de héroes acorde a su franquicia...
 
 -- // --
 
@@ -25,3 +25,13 @@ La misma posee un login, search, rutas y pantallas de héroes acorde a su franqu
 ✔ - QueryParams
 
 ✔ - Paquete "Query-Strings"
+
+✔ - Rutas públicas y privadas
+
+✔ - Login y logout
+
+✔ - Global Context
+
+✔ - Reducer y useReducer
+
+✔ - Memorizar rutas visitadas (useMemo y localSotrage)
