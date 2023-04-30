@@ -4,11 +4,11 @@
 
 🔥 Esta aplicación nos permite buscar y mostrar diferentes héroes de franquicias como Marvel y DC 🔥
 
--- // --
+-- /🤖/ --
 
 La misma posee un login-logout, search, rutas públicas-privadas y pantallas de héroes acorde a su franquicia...
 
--- // --
+-- /🤖/ --
 
 # Contenido:
 
