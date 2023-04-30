@@ -9,7 +9,7 @@ export const HeroCard = ({
   characters,
 }) => {
   //! ID = ID.JPG
-  const heroImageUrl = `/assets/heroes/${id}.jpg`;
+  const heroImageUrl = `/public/heroes/${id}.jpg`;
   //! Evitar repetir "Alter Ego"
   const charactersByActor = <p className="card-text pB">{characters}</p>;
 

@@ -22,7 +22,7 @@ export const HeroPage = () => {
   }
 
   //! ID = ID.JPG
-  const heroImageUrl = `/assets/heroes/${hero.id}.jpg`;
+  const heroImageUrl = `/public/heroes/${hero.id}.jpg`;
 
   return (
     <div className="row mt-5">
